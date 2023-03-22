@@ -53,6 +53,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+
+using Empower.Library.RoomTest;
+
 using Skyline.DataMiner.Automation;
 using Skyline.DataMiner.Core.DataMinerSystem.Automation;
 using Skyline.DataMiner.Core.DataMinerSystem.Common;
@@ -70,11 +73,13 @@ public class Script
 	{
 		IDms thisDms = engine.GetDms();
 
-		var allElements = thisDms.GetElements();
-		foreach(var element in allElements)
-		{
-			engine.GenerateInformation(element.Name);
-		}
+		//var allElements = thisDms.GetElements();
+		//foreach(var element in allElements)
+		//{
+		// 
+		//}
 
+		var order = OrderFactory.CreateOrder("order1");
+		order.Dispatch("PDB");
 	}
 }
